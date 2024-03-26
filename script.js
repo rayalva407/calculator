@@ -24,7 +24,10 @@ function operate(num1, num2, operation) {
       break;
     case "-":
       subtract(num1, num2);
-    
+      case "*":
+        multiply(num1, num2);
+      case "/":
+        divide(num1, num2);
     default:
       break;
   }
