@@ -1,0 +1,14 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #12162c;
+  margin: 0;
+  height: 100vh;
+  width: auto;
+}
+.calculator {
+  height: 50vh;
+  width: 40vw;
+  background-color: black;
+}
