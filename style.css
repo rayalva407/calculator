@@ -9,6 +9,20 @@ body {
 }
 .calculator {
   height: 50vh;
-  width: 40vw;
+  width: 500px;
   background-color: black;
+}
+
+.display {
+  background-color: #6b6b6ba2;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  color: white;
+  height: 20%;
+  text-align: right;
+}
+
+.display-text {
+  font-size: 50pt;
 }
