@@ -24,10 +24,10 @@ function operate(num1, num2, operation) {
       break;
     case "-":
       subtract(num1, num2);
-      case "*":
-        multiply(num1, num2);
-      case "/":
-        divide(num1, num2);
+    case "*":
+      multiply(num1, num2);
+    case "/":
+      divide(num1, num2);
     default:
       break;
   }
@@ -36,3 +36,6 @@ function operate(num1, num2, operation) {
 let num1 = 0;
 let num2 = 0;
 let op = "";
+displayValue = "0";
+displayText = document.querySelector(".display-text");
+displayText.innerText = displayValue;
