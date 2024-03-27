@@ -1,3 +1,7 @@
+html {
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
 body {
   display: flex;
   align-items: center;
