@@ -31,6 +31,7 @@ body {
 
 .display-text {
   font-size: 50pt;
+  padding: 0 15px;
 }
 
 .keyboard {
@@ -49,4 +50,10 @@ body {
   flex: auto;
   font-size: 30pt;
   border: white solid 1px;
+}
+
+.key:hover {
+  background-color: #0fdbff98;
+  color: black;
+  transition-duration: 0.5s;
 }
