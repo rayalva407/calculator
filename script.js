@@ -36,6 +36,23 @@ function operate(num1, num2, operation) {
 let num1 = 0;
 let num2 = 0;
 let op = "";
-displayValue = "0";
-displayText = document.querySelector(".display-text");
-displayText.innerText = displayValue;
+const displayText = document.querySelector(".display-text");
+let displayString = displayText.innerText;
+const keys = document.querySelectorAll(".key");
+
+keys.forEach((key) => {
+  key.addEventListener("click", () => {
+    const value = key.innerText;
+
+    if (displayString === "0") {
+      displayString = value;
+    }
+    else {
+      displayString += key.innerText;
+    }
+
+    displayText.innerText = displayString;
+  });
+});
+
+
