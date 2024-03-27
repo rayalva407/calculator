@@ -7,8 +7,9 @@ body {
   height: 100vh;
   width: auto;
 }
+
 .calculator {
-  height: 50vh;
+  height: 60vh;
   width: 500px;
   background-color: black;
 }
@@ -25,4 +26,21 @@ body {
 
 .display-text {
   font-size: 50pt;
+}
+
+.keyboard {
+  color: white;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: 80%
+}
+
+.key {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  flex: auto;
+  font-size: 30pt;
 }
