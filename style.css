@@ -1,0 +1,52 @@
+html {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #12162c;
+  margin: 0;
+  height: 100vh;
+  width: auto;
+}
+
+.calculator {
+  height: 60%;
+  width: 500px;
+  background-color: black;
+}
+
+.display {
+  background-color: #0c0c0c;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  color: white;
+  height: 20%;
+  text-align: right;
+  border: white solid 1px;
+}
+
+.display-text {
+  font-size: 50pt;
+}
+
+.keyboard {
+  color: white;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: 80%;
+}
+
+.key {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  flex: auto;
+  font-size: 30pt;
+  border: white solid 1px;
+}
