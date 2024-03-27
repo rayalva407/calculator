@@ -13,7 +13,6 @@ body {
 }
 
 .calculator {
-  height: 60%;
   width: 500px;
   background-color: black;
 }
@@ -39,7 +38,6 @@ body {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  height: 80%;
 }
 
 .key {
