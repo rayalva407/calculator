@@ -1,5 +1,5 @@
 html {
-  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
 
 body {
@@ -19,13 +19,14 @@ body {
 }
 
 .display {
-  background-color: #6b6b6ba2;
+  background-color: #0c0c0c;
   display: flex;
   align-items: center;
   justify-content: right;
   color: white;
   height: 20%;
   text-align: right;
+  border: white solid 1px;
 }
 
 .display-text {
