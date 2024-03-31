@@ -90,6 +90,10 @@ keys.forEach((key) => {
       displayString = operate(operation.num1, operation.num2, operation.operator)
       clearNumbers(operation)
     }
+    else if (value === "C") {
+      clearNumbers(operation)
+      displayString = "0"
+    }
     else {
       displayString = displayString + value;
       if (displayString[0] === "0") {
