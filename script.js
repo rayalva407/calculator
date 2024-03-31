@@ -22,7 +22,6 @@ function operate(num1, num2, operation) {
   switch (operation) {
     
     case "+":
-      console.log(num1);
       return add(num1, num2);
     case "-":
       return subtract(num1, num2);
@@ -36,13 +35,19 @@ function operate(num1, num2, operation) {
 }
 
 function operationReady(op) {
-  for (k in op) {
-    if (op[k] === undefined) {
+  for (let key in op) {
+    if (op[key] === undefined) {
       return false;
     }
   }
 
   return true;
+}
+
+function clearNumbers(op) {
+  op.num1 = undefined
+  op.num2 = undefined
+  op.operator = undefined
 }
 
 const operation = {
@@ -59,6 +64,7 @@ keys.forEach((key) => {
   key.addEventListener("click", () => {
     const value = key.innerText;
 
+    
     if (value === "+" || value === "-" || value === "*" || value === "/") {
       operation.operator = value
 
@@ -69,17 +75,20 @@ keys.forEach((key) => {
         operation.num2 = Number(displayString)
       }
 
-      console.log(operationReady(operation))
-      
       if (operationReady(operation)) {
         displayString = operate(operation.num1, operation.num2, operation.operator)
+        operation.num1 = Number(displayString)
+        operation.num2 = undefined
+        
       }
-
-      displayString = "0"
+      else {
+        displayString = "0"
+      }
     }
     else if (value === "=") {
       operation.num2 = Number(displayString)
       displayString = operate(operation.num1, operation.num2, operation.operator)
+      clearNumbers(operation)
     }
     else {
       displayString = displayString + value;
