@@ -82,7 +82,6 @@ keys.forEach((key) => {
         operation.num1 = Number(displayString)
         operation.num2 = undefined
         stillGoing = true
-        console.log(operation)
       }
       else {
         displayString = "0"
@@ -91,8 +90,12 @@ keys.forEach((key) => {
     }
     else if (value === "=") {
       operation.num2 = Number(displayString)
-      displayString = operate(operation.num1, operation.num2, operation.operator)
-      clearNumbers(operation)
+
+      if (operationReady(operation)) {
+        displayString = operate(operation.num1, operation.num2, operation.operator)
+        clearNumbers(operation)
+      }
+
     }
     else if (value === "C") {
       clearNumbers(operation)
