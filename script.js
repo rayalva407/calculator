@@ -59,15 +59,14 @@ const operation = {
 const displayText = document.querySelector(".display-text");
 let displayString = displayText.innerText;
 const keys = document.querySelectorAll(".key");
+let stillGoing = false;
 
 keys.forEach((key) => {
   key.addEventListener("click", () => {
     const value = key.innerText;
-
     
     if (value === "+" || value === "-" || value === "*" || value === "/") {
-      operation.operator = value
-
+      
       if (operation.num1 === undefined) {
         operation.num1 = Number(displayString)
       }
@@ -75,15 +74,20 @@ keys.forEach((key) => {
         operation.num2 = Number(displayString)
       }
 
+      console.log(operation)
+
       if (operationReady(operation)) {
+
         displayString = operate(operation.num1, operation.num2, operation.operator)
         operation.num1 = Number(displayString)
         operation.num2 = undefined
-        
+        stillGoing = true
+        console.log(operation)
       }
       else {
         displayString = "0"
       }
+      operation.operator = value
     }
     else if (value === "=") {
       operation.num2 = Number(displayString)
@@ -95,6 +99,11 @@ keys.forEach((key) => {
       displayString = "0"
     }
     else {
+      if (stillGoing) {
+        displayString = '0'
+        displayText.innerText = displayString;
+      }
+      
       displayString = displayString + value;
       if (displayString[0] === "0") {
         displayString = displayString.slice(1)
