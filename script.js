@@ -101,6 +101,9 @@ keys.forEach((key) => {
       clearNumbers(operation)
       displayString = "0"
     }
+    else if (value === "←") {
+      displayString = displayString.substring(0, displayString.length - 1)
+    }
     else {
       if (stillGoing) {
         displayText.innerText = displayString;
