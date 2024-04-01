@@ -60,13 +60,16 @@ const displayText = document.querySelector(".display-text");
 let displayString = displayText.innerText;
 const keys = document.querySelectorAll(".key");
 let stillGoing = false;
+const dot = document.querySelector("#dot")
+
+
+
 
 keys.forEach((key) => {
   key.addEventListener("click", () => {
     const value = key.innerText;
     
     if (value === "+" || value === "-" || value === "*" || value === "/") {
-      
       if (operation.num1 === undefined) {
         operation.num1 = Number(displayString)
       }
@@ -74,11 +77,9 @@ keys.forEach((key) => {
         operation.num2 = Number(displayString)
       }
 
-      console.log(operation)
-
       if (operationReady(operation)) {
 
-        displayString = operate(operation.num1, operation.num2, operation.operator)
+        displayString = operate(operation.num1, operation.num2, operation.operator).toString()
         operation.num1 = Number(displayString)
         operation.num2 = undefined
         stillGoing = true
@@ -92,10 +93,9 @@ keys.forEach((key) => {
       operation.num2 = Number(displayString)
 
       if (operationReady(operation)) {
-        displayString = operate(operation.num1, operation.num2, operation.operator)
+        displayString = operate(operation.num1, operation.num2, operation.operator).toString()
         clearNumbers(operation)
       }
-
     }
     else if (value === "C") {
       clearNumbers(operation)
@@ -103,14 +103,21 @@ keys.forEach((key) => {
     }
     else {
       if (stillGoing) {
-        displayString = '0'
         displayText.innerText = displayString;
       }
       
       displayString = displayString + value;
+
       if (displayString[0] === "0") {
         displayString = displayString.slice(1)
       }
+    }
+
+    if (displayString.includes(".")) {
+      dot.classList.add("disabled-button")
+    }
+    else {
+      dot.classList.remove("disabled-button")
     }
 
     displayText.innerText = displayString;
