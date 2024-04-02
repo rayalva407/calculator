@@ -56,6 +56,14 @@ body {
   transition-duration: 0.5s;
 }
 
+#clear {
+  flex: 120px;
+}
+
+#back {
+  flex: 370px;
+}
+
 .disabled-button {
   pointer-events: none;
   opacity: 0.4;

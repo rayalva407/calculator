@@ -97,7 +97,7 @@ keys.forEach((key) => {
         clearNumbers(operation)
       }
     }
-    else if (value === "C") {
+    else if (value === "AC") {
       clearNumbers(operation)
       displayString = "0"
 
@@ -105,7 +105,7 @@ keys.forEach((key) => {
         key.classList.remove("disabled-button")
       })
     }
-    else if (value === "← Back") {
+    else if (value === "← Backspace") {
       displayString = displayString.substring(0, displayString.length - 1)
       if (displayString === "") {
         displayString = "0"
