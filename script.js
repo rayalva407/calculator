@@ -101,11 +101,15 @@ keys.forEach((key) => {
       clearNumbers(operation)
       displayString = "0"
     }
-    else if (value === "←") {
+    else if (value === "← Back") {
       displayString = displayString.substring(0, displayString.length - 1)
+      if (displayString === "") {
+        displayString = "0"
+      }
     }
     else {
       if (stillGoing) {
+        displayString = "0"
         displayText.innerText = displayString;
       }
       
