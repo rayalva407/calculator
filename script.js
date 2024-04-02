@@ -100,6 +100,10 @@ keys.forEach((key) => {
     else if (value === "C") {
       clearNumbers(operation)
       displayString = "0"
+
+      keys.forEach((key) => {
+        key.classList.remove("disabled-button")
+      })
     }
     else if (value === "← Back") {
       displayString = displayString.substring(0, displayString.length - 1)
@@ -128,6 +132,12 @@ keys.forEach((key) => {
     }
 
     displayText.innerText = displayString;
+
+    if (displayString === "Division by zero error. Try again!") {
+      keys.forEach((key) => {
+        if (key.id !== "clear") key.classList.add("disabled-button")
+      })
+    }
   });
 });
 
