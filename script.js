@@ -109,10 +109,10 @@ keys.forEach((key) => {
       }
     }
     else {
-      // TODO: Something weird is going on here
       if (stillGoing) {
         displayString = "0"
-        displayText.innerText = displayString;
+        displayText.innerText = "0"
+        stillGoing = false
       }
 
       displayString = displayString + value;
@@ -188,6 +188,7 @@ document.addEventListener("keydown", (e) => {
     if (stillGoing) {
       displayString = "0"
       displayText.innerText = displayString;
+      stillGoing = false;
     }
 
     displayString = displayString + value;
