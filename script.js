@@ -74,6 +74,8 @@ keys.forEach((key) => {
         operation.num2 = Number(displayString)
       }
 
+      console.log(operation)
+
       if (operationReady(operation)) {
 
         displayString = operate(operation.num1, operation.num2, operation.operator).toString()
@@ -200,6 +202,7 @@ document.addEventListener("keydown", (e) => {
 
   if (displayString.includes(".")) {
     dot.classList.add("disabled-button")
+
   }
   else {
     dot.classList.remove("disabled-button")
