@@ -51,17 +51,32 @@ body {
 }
 
 .key:hover {
-  background-color: #0fdbff98;
+  background-color: #0fdbff;
   color: black;
   transition-duration: 0.5s;
 }
 
+.operator {
+  background-color: #0fdbff98;
+}
+
 #clear {
   flex: 120px;
+  color: #ff0059;
+}
+
+#clear:hover {
+  flex: 120px;
+  background-color: #ff0059;
+  color: black;
 }
 
 #back {
   flex: 370px;
+}
+
+#back:hover {
+  background-color: #0fdbff;
 }
 
 .disabled-button {
