@@ -139,76 +139,76 @@ keys.forEach((key) => {
   });
 });
 
-// document.addEventListener("keydown", (e) => {
-//   e.preventDefault()
-//
-//   const value = e.key;
-//   if (value === "+" || value === "-" || value === "*" || value === "/") {
-//     if (operation.num1 === undefined) {
-//       operation.num1 = Number(displayString)
-//     }
-//     else{
-//       operation.num2 = Number(displayString)
-//     }
-//
-//     if (operationReady(operation)) {
-//       displayString = operate(operation.num1, operation.num2, operation.operator).toString()
-//       operation.num1 = Number(displayString)
-//       operation.num2 = undefined
-//       stillGoing = true
-//     }
-//     else {
-//       displayString = "0"
-//     }
-//     operation.operator = value
-//   }
-//   else if (value === "Enter") {
-//     operation.num2 = Number(displayString)
-//
-//     if (operationReady(operation)) {
-//       displayString = operate(operation.num1, operation.num2, operation.operator).toString()
-//       clearNumbers(operation)
-//     }
-//   }
-//   else if (value === "Delete") {
-//     clearNumbers(operation)
-//     displayString = "0"
-//
-//     keys.forEach((key) => {
-//       key.classList.remove("disabled-button")
-//     })
-//   }
-//   else if (value === "Backspace") {
-//     displayString = displayString.substring(0, displayString.length - 1)
-//     if (displayString === "") {
-//       displayString = "0"
-//     }
-//   }
-//   else if (isFinite(value) || value === ".") {
-//     if (stillGoing) {
-//       displayString = "0"
-//       displayText.innerText = displayString;
-//     }
-//
-//     displayString = displayString + value;
-//
-//     if (displayString[0] === "0") {
-//       displayString = displayString.slice(1)
-//     }
-//   }
-//
-//   if (displayString.includes(".")) {
-//     dot.classList.add("disabled-button")
-//   }
-//   else {
-//     dot.classList.remove("disabled-button")
-//   }
-//
-//   displayText.innerText = displayString;
-//
-//   if (displayString === "Division by zero error. Try again!") {
-//     keys.forEach((key) => {
-//       if (key.id !== "clear") key.classList.add("disabled-button")
-//     })
-//   }
-// })
+document.addEventListener("keydown", (e) => {
+  e.preventDefault()
+
+  const value = e.key;
+  if (value === "+" || value === "-" || value === "*" || value === "/") {
+    if (operation.num1 === undefined) {
+      operation.num1 = Number(displayString)
+    }
+    else{
+      operation.num2 = Number(displayString)
+    }
+
+    if (operationReady(operation)) {
+      displayString = operate(operation.num1, operation.num2, operation.operator).toString()
+      operation.num1 = Number(displayString)
+      operation.num2 = undefined
+      stillGoing = true
+    }
+    else {
+      displayString = "0"
+    }
+    operation.operator = value
+  }
+  else if (value === "Enter") {
+    operation.num2 = Number(displayString)
+
+    if (operationReady(operation)) {
+      displayString = operate(operation.num1, operation.num2, operation.operator).toString()
+      clearNumbers(operation)
+    }
+  }
+  else if (value === "Delete") {
+    clearNumbers(operation)
+    displayString = "0"
+
+    keys.forEach((key) => {
+      key.classList.remove("disabled-button")
+    })
+  }
+  else if (value === "Backspace") {
+    displayString = displayString.substring(0, displayString.length - 1)
+    if (displayString === "") {
+      displayString = "0"
+    }
+  }
+  else if (isFinite(value) || value === ".") {
+    if (stillGoing) {
+      displayString = "0"
+      displayText.innerText = displayString;
+    }
+
+    displayString = displayString + value;
+
+    if (displayString[0] === "0") {
+      displayString = displayString.slice(1)
+    }
+  }
+
+  if (displayString.includes(".")) {
+    dot.classList.add("disabled-button")
+  }
+  else {
+    dot.classList.remove("disabled-button")
+  }
+
+  displayText.innerText = displayString;
+
+  if (displayString === "Division by zero error. Try again!") {
+    keys.forEach((key) => {
+      if (key.id !== "clear") key.classList.add("disabled-button")
+    })
+  }
+})
